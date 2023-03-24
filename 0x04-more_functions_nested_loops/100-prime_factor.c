@@ -4,15 +4,16 @@
  * main - prints largest prime factor.
  * Return: Always 0.
  */
+
 int main(void)
 {
-	long int num = 612852475143, pf;
+	long int num = 612852475143, fp;
 
-	for (fp = 2; fp <= n; fp++)
+	for (fp = 2; fp <= num; fp++)
 	{
-		if (n % fp == 0)
+		if (num % fp == 0)
 		{
-			n /= fp;
+			num /= fp;
 			fp--;
 		}
 	}
