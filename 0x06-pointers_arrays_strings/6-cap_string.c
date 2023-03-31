@@ -2,39 +2,32 @@
 
 /**
  * cap_string - capitalizes all words of a string
- * @s: input string.
+ * @str: input string.
  * Return: the pointer to dest.
  */
-char *cap_string(char *n)
+char *cap_string(char *str)
 {
 	int i = 0;
 
-	if (n[0] >= 'a' && n[0] <= 'z')
+	while (str[i])
 	{
-		n[0] = n[0] - 32;
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
+			i++;
+		if (str[i] == ' ' ||
+		    str[i] == '\t' ||
+		    str[i] == '\n' ||
+		    str[i] == ',' ||
+		    str[i] == ';' ||
+		    str[i] == '.' ||
+		    str[i] == '!' ||
+		    str[i] == '?' ||
+		    str[i] == '"' ||
+		    str[i] == '(' ||
+		    str[i] == ')' ||
+		    str[i] == '{' ||
+		    str[i] == '}' ||
+		    i == 0)
+			str[i] -= 32;
+		i++;
 	}
-	for (i = 0; n[i] != '\0'; i++)
-	{
-		switch (n[i])
-		{
-			case ',':
-			case ';':
-			case '.':
-			case '!':
-			case '?':
-			case '"':
-			case '(':
-			case ')':
-			case '{':
-			case '}':
-			case ' ':
-			case '\n':
-			case '\t':
-				if (n[i + 1] > 96 && n[i + 1] < 123)
-				{
-					n[i + 1] = n[i + 1] - 32;
-				}
-		}
-	}
-	return (n);
-}
+	return (str);
