@@ -5,6 +5,7 @@
  * @str: input string.
  * Return: the pointer to dest.
  */
+
 char *cap_string(char *str)
 {
 	int i = 0;
@@ -31,3 +32,4 @@ char *cap_string(char *str)
 		i++;
 	}
 	return (str);
+}
