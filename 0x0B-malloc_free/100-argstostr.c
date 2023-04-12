@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 /**
  * argstostr - gives array of args
@@ -38,8 +38,6 @@ char *argstostr(int ac, char **av)
 		s[k] = '\n';
 		k++;
 	}
-
 	s[k] = '\0';
-
 	return (s);
 }
