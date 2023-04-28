@@ -3,7 +3,7 @@
 void __attribute__((constructor)) bmain(void);
 
 /**
- * hare - Prints a string before the
+ * bmain - Prints a string before the
  *        main function is executed.
  */
 void bmain(void)
